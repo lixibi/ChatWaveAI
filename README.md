@@ -5,9 +5,8 @@
 =======
 
 这是一个基于网页的 AI 语音助手项目，集成了语音识别、AI 对话和语音合成功能。用户可以通过语音与 AI 进行实时对话交互。
->>>>>>> 986e58bc68b7d7bcff2ea16abb0b6f9c47ddd70c
 
-![项目预览](Frontend/public/banner.png)
+![ui](https://github.com/user-attachments/assets/84eed350-6ecd-420d-8cb3-edf66e502783)
 
 # AI Voice Assistant
 
