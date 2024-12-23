@@ -1,6 +1,6 @@
 # AI 语音助手 | AI Voice Assistant
 
-<<<<<<< HEAD
+
 [中文](#ai-语音助手) | [English](#ai-voice-assistant)
 =======
 
