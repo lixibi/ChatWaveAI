@@ -1,60 +1,66 @@
-# AI 语音助手
+# AI 语音助手 | AI Voice Assistant
 
-这是一个基于网页的 AI 语音助手项目，集成了语音识别、AI 对话和语音合成功能。用户可以通过语音与 AI 进行实时对话交互。
+[中文](#ai-语音助手) | [English](#ai-voice-assistant)
 
-## 主要功能
+![项目预览](Frontend/public/banner.png)
 
-- 实时语音识别（基于百度语音服务）
-- AI 对话（基于 Gemini API）
-- 语音合成（TTS）
-- 实时音频可视化
-- 自动检测语音输入
-- 支持打断和连续对话
+# AI Voice Assistant
 
-## 运行环境要求
+This is a web-based AI voice assistant that integrates speech recognition, AI conversation, and speech synthesis. Users can interact with AI through real-time voice conversations.
 
-- Node.js 16.0 或以上版本
-- 现代浏览器（支持 WebAudio API）
-- 网络连接（用于API调用）
-- Python 3.7 或以上版本
-- edge-tts 库（用于语音合成）
+## Key Features
 
-## 快速开始
+- Real-time speech recognition (based on Baidu Speech Service)
+- AI conversation (powered by Gemini API)
+- Text-to-Speech (TTS)
+- Real-time audio visualization
+- Automatic voice input detection
+- Support for interruption and continuous dialogue
 
-### 1. 安装依赖
+## Requirements
+
+- Node.js 16.0 or above
+- Modern browser (with WebAudio API support)
+- Internet connection (for API calls)
+- Python 3.7 or above
+- edge-tts library (for speech synthesis)
+
+## Quick Start
+
+### 1. Install Dependencies
 
 ```bash
-# 全局安装 pnpm（如果尚未安装）
+# Install pnpm globally (if not installed)
 npm install -g pnpm
 
-# 安装项目依赖
+# Install project dependencies
 pnpm install
 
-# 后端依赖
+# Backend dependencies
 cd Backend
 pip install -r requirements.txt
 ```
 
-### 2. 启动后端服务
+### 2. Start Backend Service
 
 ```bash
-# 进入后端目录
+# Navigate to backend directory
 cd Backend
 
-# 启动后端服务
+# Start backend service
 python edge-tts.py
 ```
 
-> 注意：后端服务必须运行在 8000 端口，否则语音合成功能将无法正常工作。
+> Note: The backend service must run on port 8000 for the speech synthesis feature to work properly.
 
-### 3. 配置环境变量
+### 3. Configure Environment Variables
 
-1. 复制 `.env.example` 文件并重命名为 `.env`：
+1. Copy `.env.example` file and rename it to `.env`:
 ```bash
 cp .env.example .env
 ```
 
-2. 在 `.env` 文件中填入您的 API 密钥
+2. Fill in your API keys in the `.env` file:
 
 ```plaintext
 # Baidu API Configuration
@@ -68,95 +74,87 @@ GEMINI_API_KEY=your_gemini_api_key_here
 GEMINI_API_URL=https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent
 ```
 
-### 4. 启动前端开发服务器
+### 4. Start Frontend Development Server
 
 ```bash
-# 回到项目根目录
+# Return to project root
 cd ..
 
-# 安装前端依赖
+# Install frontend dependencies
 pnpm install
-# 或
-npm install
-# 或
-yarn install
 
-# 启动开发服务器
+# Start development server
 pnpm dev
-# 或
-npm run dev
-# 或
-yarn dev
 ```
 
-访问 `http://localhost:5173` 即可使用语音助手。
+Visit `http://localhost:5173` to use the voice assistant.
 
-> 提示：推荐使用 pnpm 作为包管理器，它能提供更快的安装速度和更好的磁盘空间利用率。
+> Tip: We recommend using pnpm as the package manager for faster installation and better disk space utilization.
 
-## 系统架构
+## System Architecture
 
-项目分为前端和后端两个部分：
+The project is divided into frontend and backend:
 
-- 前端：React + Vite 构建的 Web 应用
-  - 语音识别（百度语音服务）
-  - AI 对话（Gemini API）
-  - 音频可视化
+- Frontend: React + Vite web application
+  - Speech recognition (Baidu Speech Service)
+  - AI conversation (Gemini API)
+  - Audio visualization
 
-- 后端：Python Flask 应用
-  - 语音合成服务（基于 edge-tts）
-  - 运行在 8000 端口
+- Backend: Python Flask application
+  - Speech synthesis service (based on edge-tts)
+  - Running on port 8000
 
-## API 密钥获取方法
+## Obtaining API Keys
 
-### 百度语音服务
-1. 访问[百度智能云](https://cloud.baidu.com/)
-2. 注册/登录账号
-3. 创建语音应用
-4. 获取 API Key 和 Secret Key
+### Baidu Speech Service
+1. Visit [Baidu Cloud](https://cloud.baidu.com/)
+2. Register/Login
+3. Create a speech application
+4. Get API Key and Secret Key
 
 ### Gemini API
-1. 访问 [Google AI Studio](https://makersuite.google.com/app/apikey)
-2. 登录 Google 账号
-3. 创建 API 密钥
+1. Visit [Google AI Studio](https://makersuite.google.com/app/apikey)
+2. Login with Google account
+3. Create API key
 
-## 安全提醒
+## Security Notes
 
-- 请勿将包含实际 API 密钥的 `.env` 文件提交到版本控制系统
-- 确保 `.env` 文件已添加到 `.gitignore` 中
-- 建议定期更换 API 密钥
-- 在生产环境中使用时，建议增加额外的安全措施
+- Never commit `.env` file containing actual API keys to version control
+- Ensure `.env` file is added to `.gitignore`
+- Regularly rotate API keys
+- Implement additional security measures for production environment
 
-## 使用说明
+## Usage Guide
 
-1. 打开网页后，允许浏览器使用麦克风
-2. 等待"准备就绪"提示
-3. 开始说话，系统会自动检测语音输入
-4. AI 助手会通过语音回答您的问题
-5. 您可以随时打断 AI 的回答继续提问
+1. Open the webpage and allow browser microphone access
+2. Wait for "Ready" prompt
+3. Start speaking, the system will automatically detect voice input
+4. AI assistant will respond through voice
+5. You can interrupt AI's response at any time to continue asking questions
 
-## 常见问题
+## Troubleshooting
 
-1. 如果语音识别不准确，请确保：
-   - 麦克风工作正常
-   - 环境噪音不要太大
-   - 说话语速适中
+1. If speech recognition is inaccurate, ensure:
+   - Microphone is working properly
+   - Environment noise is minimal
+   - Speaking at a moderate pace
 
-2. 如果 API 调用失败，请检查：
-   - API 密钥是否正确
-   - 网络连接是否正常
-   - API 使用配额是否超限
+2. If API calls fail, check:
+   - API keys are correct
+   - Network connection is stable
+   - API usage quotas are not exceeded
 
-## 技术支持
+## Support
 
-如有问题或建议，请提交 Issue 或 Pull Request。
+For issues or suggestions, please submit an Issue or Pull Request.
 
 ## License
 
 MIT License
 
-## 致谢
+## Acknowledgments
 
-本项目参考了以下优秀的开源项目：
+This project references the following excellent open-source projects:
 
-- [transformers.js-examples/moonshine-web](https://github.com/huggingface/transformers.js-examples/tree/main/moonshine-web) - HuggingFace 的 Transformers.js 示例项目
-- [edge-tts](https://github.com/lyz1810/edge-tts) - 基于微软 Edge TTS 的在线语音合成服务
+- [transformers.js-examples/moonshine-web](https://github.com/huggingface/transformers.js-examples/tree/main/moonshine-web) - HuggingFace's Transformers.js example project
+- [edge-tts](https://github.com/lyz1810/edge-tts) - Microsoft Edge TTS-based online speech synthesis service
