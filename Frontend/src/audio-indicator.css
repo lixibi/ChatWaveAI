@@ -1,0 +1,48 @@
+/* 音频播放指示器样式 */
+.audio-playing-indicator {
+    position: absolute;
+    top: 5rem;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 10;
+}
+
+.playing-indicator {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.audio-wave {
+    width: 24px;
+    height: 24px;
+    background: #4CAF50;
+    border-radius: 50%;
+    position: relative;
+    animation: pulse-green 1.5s ease-out infinite;
+}
+
+.playing-text {
+    color: #4CAF50;
+    font-size: 1rem;
+    font-weight: 500;
+    text-shadow: 0 0 10px rgba(76, 175, 80, 0.5);
+}
+
+@keyframes pulse-green {
+    0% {
+        transform: scale(0.95);
+        box-shadow: 0 0 0 0 rgba(76, 175, 80, 0.7);
+    }
+    
+    70% {
+        transform: scale(1);
+        box-shadow: 0 0 0 10px rgba(76, 175, 80, 0);
+    }
+    
+    100% {
+        transform: scale(0.95);
+        box-shadow: 0 0 0 0 rgba(76, 175, 80, 0);
+    }
+} 
